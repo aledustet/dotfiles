@@ -1,0 +1,59 @@
+[user]
+	name = Alejandro Dustet
+	email = aledustet@gmail.com
+
+[color]
+  diff = auto
+  status = auto
+  branch = auto
+
+[color "diff"]
+  meta = yellow
+
+[core]
+	excludesfile = /Users/dustet/.gitignore_global
+  editor = vim --noplugin
+
+[apply]
+  whitespace = nowarn
+
+[alias]
+  lg = log --remotes --graph --branches --format='%C(auto)%h%d%Creset %s %Cgreen(%ar) %Cblue<%an>%Creset'
+  st = status -s
+  co = checkout
+  aa = add -A
+  cm = commit -m
+  mer = merge --no-ff
+
+[core]
+  editor = /usr/bin/vim
+
+[merge]
+  tool = vimdiff
+
+[mergetool]
+	keepBackup = true
+
+#[http]
+#  proxy = http://10.6.121.5:5050
+
+#[https]
+# proxy = http://10.6.121.5:5050
+
+[push]
+	default = simple
+
+[filter "media"]
+	required = true
+	clean = git media clean %f
+	smudge = git media smudge %f
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path =
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[filter "lfs"]
+	clean = git lfs clean %f
+	smudge = git lfs smudge %f
+	required = true
