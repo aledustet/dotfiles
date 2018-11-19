@@ -2,13 +2,12 @@
 me=$(basename "$0")
 
 help_message="\
-Usage: $me [-c FILE] [<options>]
-Deploy api docs to line5-docs.
+Usage: $me [<options>]
+You only merge once
 
 Options:
-
   -h, --help           Show this help information.
-  -m, --master-branch  Master bracnh to merge to, by default master
+  -m, --master-branch  Master branch to merge to, by default master
   -t, --testing        Run tests, by default is inactive
 "
 
@@ -63,7 +62,7 @@ rebase_and_push_master() {
 
 if [[ $1 = "-h" || $1 = "--help" ]]; then
   echo "$help_message"
-  return 0
+  exit
 fi
 
 main "$@"
