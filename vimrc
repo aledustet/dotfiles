@@ -3,6 +3,12 @@ filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
+
+map <Leader>t :call RunCurrentSpecFile()<CR>
+map <Leader>s :call RunNearestSpec()<CR>
+map <Leader>l :call RunLastSpec()<CR>
+map <Leader>a :call RunAllSpecs()<CR>
+
 call vundle#begin()
 " alternatively, pass a path where Vundle should install plugins
 "call vundle#begin('~/some/path/here')
@@ -49,6 +55,7 @@ filetype plugin on
 " :PluginInstall(!)    - install (update) plugins
 " :PluginSearch(!) foo - search (or refresh cache first) for foo
 " :PluginClean(!)      - confirm (or auto-approve) removal of unused plugins
+" To use the system clipboard
 set clipboard=unnamed
 
 " Set line number and relative line numbers on the open file
@@ -77,6 +84,15 @@ augroup myfiletypes
   autocmd FileType elm map <Leader>o :!elm-test<cr>
   autocmd FileType elm map <Leader>i :ElmFormat<cr>
 augroup END
+
+" To clear extra whitespaces after saving
+fun! TrimWhitespace()
+    let l:save = winsaveview()
+    keeppatterns %s/\s\+$//e
+    call winrestview(l:save)
+endfun
+
+autocmd BufWritePre * :call TrimWhitespace()
 
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
