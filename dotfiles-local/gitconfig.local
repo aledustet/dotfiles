@@ -1,0 +1,16 @@
+[user]
+  name = Alejandro Dustet
+  email = aledustet@gmail.com
+
+[color]
+  diff = auto
+  status = auto
+  branch = auto
+  meta = yellow
+
+[core]
+  excludesfile = /Users/dustet/.gitignore_global
+  editor = /usr/bin/vim
+
+[apply]
+  whitespace = nowarn
