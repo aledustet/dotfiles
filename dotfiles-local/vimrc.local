@@ -1,6 +1,9 @@
 " Set line number and relative line numbers on the open file
 set number relativenumber
 
+" Trigger configuration (Optional)
+let g:UltiSnipsExpandTrigger="<C-l>"
+
 " To set up line numbers on files with the focus losted
 augroup numbertoggle
   autocmd!

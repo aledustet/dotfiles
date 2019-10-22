@@ -1,6 +1,5 @@
 export ZSH=/Users/dustet/.oh-my-zsh
 
-
 ZSH_THEME="robbyrussell"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
@@ -9,5 +8,12 @@ ZSH_THEME="robbyrussell"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git colored-man colorize github brew osx zsh-syntax-highlighting rvm rails git bundler gem git-extras git-flow history jsontools npm node)
 
+whats_in_port() {
+  lsof -n -i4TCP:"$1"
+}
+
+rebase_branch() {
+  git checkout "$1" && git pull && git checkout - && git rebase "$1"
+}
 
 source $ZSH/oh-my-zsh.sh

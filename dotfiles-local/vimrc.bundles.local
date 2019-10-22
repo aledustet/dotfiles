@@ -1,0 +1,14 @@
+" Ultisnips required for the javascript snippets
+Plug 'SirVer/ultisnips'
+
+" ES2015 code snippets (Optional)
+Plug 'epilande/vim-es2015-snippets'
+
+" React code snippets
+Plug 'epilande/vim-react-snippets'
+
+" JSX syntax hightlighting
+Plug 'maxmellon/vim-jsx-pretty'
+
+" Typescript
+Plug 'leafgarland/typescript-vim'

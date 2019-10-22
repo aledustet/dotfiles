@@ -1,0 +1,1 @@
+alias unwipit="git reset --soft HEAD\^ && git reset ."
