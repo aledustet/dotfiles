@@ -1,4 +1,5 @@
 " Set line number and relative line numbers on the open file
+"
 set number relativenumber
 
 " Trigger configuration (Optional)
@@ -21,4 +22,4 @@ endfun
 autocmd BufWritePre * :call TrimWhitespace()
 
 syntax enable
-colorscheme monokai
+colorscheme jellybeans

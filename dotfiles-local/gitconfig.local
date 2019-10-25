@@ -14,3 +14,6 @@
 
 [apply]
   whitespace = nowarn
+
+[commit]
+  gpgsign = true

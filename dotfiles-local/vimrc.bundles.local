@@ -1,14 +1,10 @@
-" Ultisnips required for the javascript snippets
-Plug 'SirVer/ultisnips'
+function! s:SourceConfigFilesIn(directory)
+  let directory_splat = '~/dotfiles-local/' . a:directory . '/*'
+  for config_file in split(glob(directory_splat), '\n')
+    if filereadable(config_file)
+      execute 'source' config_file
+    endif
+  endfor
+endfunction
 
-" ES2015 code snippets (Optional)
-Plug 'epilande/vim-es2015-snippets'
-
-" React code snippets
-Plug 'epilande/vim-react-snippets'
-
-" JSX syntax hightlighting
-Plug 'maxmellon/vim-jsx-pretty'
-
-" Typescript
-Plug 'leafgarland/typescript-vim'
+call s:SourceConfigFilesIn('plugins')
