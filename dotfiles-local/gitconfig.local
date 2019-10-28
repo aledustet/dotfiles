@@ -10,7 +10,7 @@
 
 [core]
   excludesfile = /Users/dustet/.gitignore_global
-  editor = /usr/bin/vim
+  editor = /usr/local/bin/nvim
 
 [apply]
   whitespace = nowarn
