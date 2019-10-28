@@ -26,4 +26,6 @@ rebase_branch() {
   git checkout "$1" && git pull && git checkout - && git rebase "$1"
 }
 
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
 source $ZSH/oh-my-zsh.sh
