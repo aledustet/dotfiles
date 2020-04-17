@@ -9,16 +9,6 @@ whats_in_port() {
   lsof -n -i4TCP:"$1"
 }
 
-indigo_down() {
-  mv ~/.npmrc ~/.npmrc_backup
-  mv ~/.yarnrc ~/.yarnrc_backup
-}
-
-indigo_up() {
-  mv ~/.npmrc_backup ~/.npmrc
-  mv ~/.yarnrc_backup ~/.yarnrc
-}
-
 rebase_branch() {
   git checkout "$1" && git pull && git checkout - && git rebase "$1"
 }
@@ -26,4 +16,3 @@ rebase_branch() {
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 source $ZSH/oh-my-zsh.sh
-
