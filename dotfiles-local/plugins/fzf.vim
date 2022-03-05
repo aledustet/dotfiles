@@ -1,27 +1,20 @@
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
+let g:_fzf_file_preview_options = '--ansi --preview "bat --theme="OneHalfDark" --style numbers,changes --decorations always --color always {}"'
+let g:_fzf_find_preview_options = '--delimiter : --nth 4..' . ' ' . g:_fzf_file_preview_options
+let g:_fzf_preview_size = 'right:70%'
+
 function! Fuzzy_Files()
-    let g:fzf_files_options = '--preview "bat --theme="TwoDark" --style=numbers,changes --color always {}"'
-    call fzf#vim#files('', fzf#vim#with_preview('right'))
+    call fzf#vim#gitfiles('', fzf#vim#with_preview({ 'options': g:_fzf_file_preview_options}, g:_fzf_preview_size))
 endfunction
 
 function! Fuzzy_Find()
-  call fzf#vim#ag('', fzf#vim#with_preview({'options': '--delimiter : --nth 4..'}, 'right'))
+  call fzf#vim#ag('', fzf#vim#with_preview({'options': g:_fzf_find_preview_options }, g:_fzf_preview_size))
 endfunction
 
 nnoremap <C-f> :call Fuzzy_Files()<CR>
 nnoremap <C-d> :call Fuzzy_Find()<CR>
-
-let branch_files_options = { 'source': 'branch_files' }
-let uncommited_files_options = { 'source': 'branch_files -w' }
-
-command! BranchFiles call fzf#run(fzf#wrap('BranchFiles',
-            \ extend(branch_files_options, { 'options': s:diff_options }), 0))
-command! UncommitedFiles call fzf#run(fzf#wrap('UncommitedFiles',
-            \ extend(uncommited_files_options, { 'options': s:diff_options }), 0))
-nnoremap <silent> <leader>gp :BranchFiles<cr>
-nnoremap <silent> <leader>GP :UncommitedFiles<cr>
 
 autocmd! FileType fzf
 autocmd  FileType fzf set noshowmode noruler nornu nonu

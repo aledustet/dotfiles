@@ -21,5 +21,12 @@ endfun
 
 autocmd BufWritePre * :call TrimWhitespace()
 
+set clipboard+=unnamedplus
 syntax enable
 colorscheme jellybeans
+
+" Organization, project specific settings
+:autocmd BufRead,BufNewFile ~/code/houseparty/houseparty* setlocal ts=4 sw=4
+
+" Open history
+:nnoremap <C-h> :History<CR>

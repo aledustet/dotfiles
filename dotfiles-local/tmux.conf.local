@@ -1,0 +1,14 @@
+# Add prefix + R to reload the tmux config
+bind-key R source-file ~/.tmux.conf \; display-message "~/.tmux.conf reloaded"
+
+# Add prefix + M to edit the local dotfiles
+bind-key M neww -c -h "vim ~/dotfiles-local"
+
+bind '"' split-window -c "#{pane_current_path}"
+bind % split-window -h -c "#{pane_current_path}"
+bind c neww -c "#{pane_current_path}"
+
+set -g @plugin 'tmux-plugins/tmux-resurrect'
+set -g @plugin 'tmux-plugins/tmux-continuum'
+
+set -g @continuum-restore 'on'
