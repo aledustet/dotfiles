@@ -1,4 +1,3 @@
 alias unwipit="git reset --soft HEAD\^ && git reset ."
 alias vim="nvim"
 alias v="nvim"
-alias standup="open 'https://meet.google.com/gvh-gsjj-vhj'"
