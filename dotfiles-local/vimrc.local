@@ -26,7 +26,7 @@ syntax enable
 colorscheme jellybeans
 
 " Organization, project specific settings
-:autocmd BufRead,BufNewFile ~/code/houseparty/houseparty* setlocal ts=4 sw=4
+:autocmd BufRead,BufNewFile
 
 " Open history
 :nnoremap <C-h> :History<CR>
