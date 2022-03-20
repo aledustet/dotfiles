@@ -5,3 +5,9 @@
 - My local dotfiles influenced by using
   [thoughtbots](https://github.com/thoughtbot/dotfiles) managed by
 [rcm](https://thoughtbot.com/blog/manage-team-and-personal-dotfiles-together-with-rcm)
+
+Using nvim
+
+```
+brew install neovim
+```
