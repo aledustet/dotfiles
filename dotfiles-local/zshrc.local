@@ -13,8 +13,8 @@ export HOMEBREW_NO_AUTO_UPDATE=1
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git colored-man colorize github brew osx zsh-syntax-highlighting rvm
-rails git bundler gem git-extras git-flow history jsontools npm node yarn)
+plugins=(git colorize github brew macos rvm rails git bundler gem git-extras
+  git-flow history jsontools npm node yarn)
 
 autoload -U zmv
 # you don't need the following two now, but put them also in your .zshrc
@@ -94,7 +94,7 @@ gta() {
   git tag -m "" -a "$1"
 }
 
-gtl() {
+gtlist() {
   git tag --sort=-v:refname -n -l
 }
 
@@ -102,6 +102,25 @@ gtd() {
   git tag -d "$1"
 }
 
+groot() {
+  git rev-parse --show-toplevel
+}
+
+gignorelocal() {
+  if [ "$1" ]; then
+    echo "$1" | dd bs=1G >>./.git/info/exclude
+    return
+  fi
+  echo "Process name needed to determine busy files"
+}
+
 update_pnpm() {
   pnpm add -g pnpm
 }
+
+tmux_new() {
+  tmux new -s "$1"
+}
+
+export PATH="$HOME/.bin:$PATH"
+source /Users/dustet/.asdf/asdf.sh

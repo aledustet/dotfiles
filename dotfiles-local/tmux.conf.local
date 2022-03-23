@@ -12,3 +12,8 @@ set -g @plugin 'tmux-plugins/tmux-resurrect'
 set -g @plugin 'tmux-plugins/tmux-continuum'
 
 set -g @continuum-restore 'on'
+
+# Options suggested by neovim
+set-option -g focus-events on
+set-option -sg escape-time 10
+set-option -sa terminal-overrides ',xterm-256color:RGB'

@@ -25,8 +25,5 @@ set clipboard+=unnamedplus
 syntax enable
 colorscheme jellybeans
 
-" Organization, project specific settings
-:autocmd BufRead,BufNewFile
-
 " Open history
 :nnoremap <C-h> :History<CR>
