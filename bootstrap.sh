@@ -4,10 +4,6 @@ if ! command -v rcup &> /dev/null; then
   sudo apt-get install -y rcm
 fi
 
-if [ ! -d $HOME/dotfiles-local ];then
-  cp -r ./dotfiles-local $HOME
-fi
-
 if [ -f $HOME/.gitconfig ];then
   mv $HOME/.gitconfig $HOME/gitconfig.old
 fi

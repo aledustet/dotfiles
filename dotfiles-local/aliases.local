@@ -1,3 +1,0 @@
-alias unwipit="git reset --soft HEAD\^ && git reset ."
-alias vim="nvim"
-alias v="nvim"

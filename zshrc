@@ -46,4 +46,6 @@ _load_settings "$HOME/.zsh/configs"
 
 [[ -x /opt/homebrew/bin/brew ]] && eval $(/opt/homebrew/bin/brew shellenv)
 
+[ -f $HOME/.oh-my-zsh/oh_my_zsh.sh ] && source $HOME/.oh-my-zsh/oh_my_zsh.sh
+
 [ -f /opt/dev/dev.sh ] && source /opt/dev/dev.sh

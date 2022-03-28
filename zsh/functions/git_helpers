@@ -1,0 +1,27 @@
+rebase_branch() {
+  git checkout "$1" && git pull && git checkout - && git rebase "$1"
+}
+
+gta() {
+  git tag -m "" -a "$1"
+}
+
+gtlist() {
+  git tag --sort=-v:refname -n -l
+}
+
+gtd() {
+  git tag -d "$1"
+}
+
+groot() {
+  git rev-parse --show-toplevel
+}
+
+gignorelocal() {
+  if [ "$1" ]; then
+    echo "$1" | dd bs=1G >>./.git/info/exclude
+    return
+  fi
+  echo "Process name needed to determine busy files"
+}

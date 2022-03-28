@@ -1,0 +1,7 @@
+reload_zsh() {
+  source ~/.zshrc.local
+}
+
+edit_dotfiles_local() {
+  vim ~/dotfiles-local
+}

@@ -1,0 +1,27 @@
+whats_in_port() {
+  if [ "$1" ]; then
+    if [ ${2} -e '-t' ]; then
+      lsof -t -i4TCP:"$1"
+      return
+    fi
+    lsof -n -i4TCP:"$1"
+    return
+  fi
+  echo "Port number needed to determine accessing process"
+}
+
+clear_port() {
+  if [ "$1" ]; then
+    kill "$(lsof -t -i4TCP:"$1")"
+    return
+  fi
+  echo "Port number needed to determine accessing process"
+}
+
+files_used_by() {
+  if [ "$1" ]; then
+    pgrep "$1" | xargs -n1 lsof -p
+    return
+  fi
+  echo "Process name needed to determine busy files"
+}

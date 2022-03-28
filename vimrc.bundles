@@ -49,8 +49,15 @@ if g:has_async
   Plug 'dense-analysis/ale'
 endif
 
-if filereadable(expand("~/.vimrc.bundles.local"))
-  source ~/.vimrc.bundles.local
-endif
+function! s:SourceConfigFilesIn(directory)
+  let directory_splat = a:directory . '/*'
+  for config_file in split(glob(directory_splat), '\n')
+    if filereadable(config_file)
+      execute 'source' config_file
+    endif
+  endfor
+endfunction
+
+call s:SourceConfigFilesIn('plugins')
 
 call plug#end()

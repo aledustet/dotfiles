@@ -15,6 +15,12 @@ alias s="rspec"
 # Pretty print the path
 alias path='echo $PATH | tr -s ":" "\n"'
 
+# Git undo
+alias unwipit="git reset --soft HEAD\^ && git reset ."
+
+# User nvim by default
+alias vim="nvim"
+
 # Include custom aliases
 if [[ -f ~/.aliases.local ]]; then
   source ~/.aliases.local
