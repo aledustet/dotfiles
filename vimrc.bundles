@@ -58,6 +58,6 @@ function! s:SourceConfigFilesIn(directory)
   endfor
 endfunction
 
-call s:SourceConfigFilesIn('./plugins')
+call s:SourceConfigFilesIn('~/.vim/plugins_config')
 
 call plug#end()

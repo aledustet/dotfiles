@@ -12,6 +12,8 @@ export GPG_TTY=$(tty)
 plugins=(git colorize github brew macos rvm rails git bundler gem git-extras
   git-flow history jsontools npm node yarn)
 
+source $ZSH/oh-my-zsh.sh
+
 autoload -U zmv
 # you don't need the following two now, but put them also in your .zshrc
 alias zcp="zmv -C"
