@@ -4,6 +4,10 @@ if ! command -v rcup &> /dev/null; then
   sudo apt-get install -y rcm
 fi
 
+if ! command -v ag &> /dev/null; then
+  sudo apt install silversearcher-ag
+fi
+
 if [ -f $HOME/.gitconfig ];then
   mv $HOME/.gitconfig $HOME/gitconfig.old
 fi
