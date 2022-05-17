@@ -210,3 +210,6 @@ colorscheme jellybeans
 
 " Open history
 :nnoremap <C-h> :History<CR>
+
+" Fix conflict with rails plugin command `Expand`
+:command Ex Explore
